@@ -123,7 +123,7 @@ toolchain("clang") {
       rspfile_content = "{{inputs}}"
     }
     if (use_strip) {
-      command += " && strip --strip-sections \"$unstripped_outfile\" \"$outfile\""
+      command += " && strip -s \"$unstripped_outfile\" -o \"$outfile\""
     }
     description = "LINK $outfile"
     default_output_dir = "{{root_out_dir}}"
