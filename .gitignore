@@ -1,2 +1,6 @@
+.pydevproject
+.project
+.cproject
+.settings/
 out/
 third_party

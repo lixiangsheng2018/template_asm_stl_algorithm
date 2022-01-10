@@ -1,7 +1,5 @@
 group("default") {
   deps = [
     "//src:main",
-    "//src:libfoo_shared",
-    "//src:libfoo_static",
   ]
 }

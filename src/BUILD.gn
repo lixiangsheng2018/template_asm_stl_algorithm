@@ -1,40 +1,29 @@
-executable("main") {
-  sources = [
-    "main.cc",
-  ]
-  deps = [
-    ":foo_srcs",
+group("main") {
+  public_deps = [
+    "asm:asm_all"
   ]
 }
 
-FOO_SOURCES = [
-  "bar.cc",
-  "bar.h",
-  "foo.cc",
-  "foo.h",
-]
+config("internal_config") {
+  # Only targets in this file and its subdirs can depend on this.
+  visibility = [ "./*" ]
 
-source_set("foo_srcs") {
-  sources = FOO_SOURCES
+  include_dirs = [
+    ".",
+    "template/chp01"
+  ]
 }
 
-static_library("libfoo_static") {
-  sources = FOO_SOURCES
-}
-
-shared_library("libfoo_shared") {
-  sources = FOO_SOURCES
-}
-
-executable("foo_tests") {
+executable("all_tests") {
   testonly = true
 
   sources = [
-    "bar_test.cc",
-    "foo_test.cc",
+    "test/template/chp01/max_test.cpp",
   ]
+  
+  configs += [ ":internal_config" ]
+  
   deps = [
-    ":foo_srcs",
     "//third_party/googletest:gtest",
     "//third_party/googletest:gtest_main",
   ]

@@ -1,0 +1,35 @@
+config("asm_config") {
+  # Only targets in this file and its subdirs can depend on this.
+  visibility = [ "./*" ]
+
+  include_dirs = [
+    ".",
+    "template/chp01"
+  ]
+  
+  asmflags = [
+    "-Wno-unused-command-line-argument"
+  ]
+  
+  ldflags = [
+    "-nostdlib"
+  ]
+  
+}
+
+executable("asm_helloworld") {
+  sources = [
+    "helloworld/main.s",
+  ]
+  
+  configs += [
+    ":asm_config"
+  ]
+}
+
+
+group("asm_all") {
+  deps = [
+    ":asm_helloworld"
+  ]
+}
