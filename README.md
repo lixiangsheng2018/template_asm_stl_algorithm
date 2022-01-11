@@ -34,7 +34,7 @@ First, clone the repo. Then, initialise and fetch git submodules:
 
 To build and run the unit tests, run:
 
-    gn gen --args=is_debug=true out/debug（release版本：gn gen --args=is_debug=false out/release）
+    gn gen --args="is_debug=true" out/debug（release版本：gn gen --args=is_debug=false out/release）
     ninja -C out/debug src:all_tests
     ./out/debug/all_tests
 
