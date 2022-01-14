@@ -10,7 +10,8 @@ config("internal_config") {
 
   include_dirs = [
     ".",
-    "template/chp01"
+    "template/chp01",
+    "template/chp02"
   ]
 }
 
@@ -19,6 +20,7 @@ executable("all_tests") {
 
   sources = [
     "test/template/chp01/max_test.cpp",
+    "test/template/chp02/stack_test.cpp",
   ]
   
   configs += [ ":internal_config" ]
