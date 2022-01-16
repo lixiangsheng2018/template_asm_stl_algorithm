@@ -3,4 +3,8 @@
 .cproject
 .settings/
 out/
+*.idea/
 third_party
+*.gradle/
+src/design_patterns/java/build/
+src/algorithm/java/build/
