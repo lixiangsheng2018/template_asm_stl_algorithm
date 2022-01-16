@@ -4,22 +4,6 @@ group("main") {
   ]
 }
 
-config("internal_config") {
-  # Only targets in this file and its subdirs can depend on this.
-  visibility = [ "./*" ]
-
-  include_dirs = [
-    ".",
-    "template/chp01",
-    "template/chp02",
-    "template/chp03"
-  ]
-  
-  cflags_cc =[
-    "-Wno-sign-compare"
-  ]
-}
-
 group("all_tests") {
   testonly = true
   

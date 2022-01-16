@@ -1,4 +1,20 @@
 
+config("template_config") {
+  # Only targets in this file and its subdirs can depend on this.
+  visibility = [ "./*" ]
+
+  include_dirs = [
+    "//src/template/chp01",
+    "//src/template/chp02",
+    "//src/template/chp03",
+    "//src/template/chp04"
+  ]
+  
+  cflags_cc =[
+    "-Wno-sign-compare"
+  ]
+}
+
 executable("template_tests") {
   testonly = true
   
@@ -7,8 +23,10 @@ executable("template_tests") {
     "chp02/stack_test.cpp",
     "chp03/stack_nontype_test.cpp",
     "chp03/stack_auto_test.cpp",
+    "chp04/all_test.cpp",
   ]
-  configs += [ "//src:internal_config" ]
+  
+  configs += [ ":template_config" ]
   
   deps = [
     "//third_party/googletest:gtest",
