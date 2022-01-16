@@ -1,4 +1,6 @@
 #include "stack.hpp"
+
+namespace template_2nd {
 // partial specialization of class Stack<> for pointers:
 template <typename T>
 class Stack<T*> {
@@ -30,3 +32,5 @@ T* Stack<T*>::top() const {
   assert(!elems.empty());
   return elems.back();  // return copy of last element
 }
+
+}  // namespace template_2nd

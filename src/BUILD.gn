@@ -11,7 +11,12 @@ config("internal_config") {
   include_dirs = [
     ".",
     "template/chp01",
-    "template/chp02"
+    "template/chp02",
+    "template/chp03"
+  ]
+  
+  cflags_cc =[
+    "-Wno-sign-compare"
   ]
 }
 
@@ -21,6 +26,8 @@ executable("all_tests") {
   sources = [
     "test/template/chp01/max_test.cpp",
     "test/template/chp02/stack_test.cpp",
+    "test/template/chp03/stack_nontype_test.cpp",
+    "test/template/chp03/stack_auto_test.cpp",
   ]
   
   configs += [ ":internal_config" ]

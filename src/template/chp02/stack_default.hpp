@@ -1,5 +1,7 @@
 #include <cassert>
 #include <vector>
+namespace template_2nd {
+
 template <typename T, typename Cont = std::vector<T>>
 class Stack {
  private:
@@ -29,3 +31,5 @@ T const& Stack<T, Cont>::top() const {
   assert(!elems.empty());
   return elems.back();  // return copy of last element
 }
+
+}  // namespace template_2nd
