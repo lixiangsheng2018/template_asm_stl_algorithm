@@ -1,3 +1,11 @@
+/*
+ * max.hpp
+ * Copyright(C),2022,闷闷交流
+ * Created on: 2022年1月16日 Author: menmen
+ */
+
+#ifndef SRC_TEMPLATE_CHP01_MAX_HPP_
+#define SRC_TEMPLATE_CHP01_MAX_HPP_
 #include <cstring>
 #include <type_traits>
 
@@ -49,3 +57,5 @@ RT max(T1 a, T2 b) {
 }  // namespace Default
 
 }  // namespace template_2nd
+
+#endif /* SRC_TEMPLATE_CHP01_MAX_HPP_ */

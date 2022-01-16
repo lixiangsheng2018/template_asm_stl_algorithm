@@ -1,3 +1,12 @@
+/*
+ * stack.hpp
+ * Copyright(C),2022,闷闷交流
+ * Created on: 2022年1月16日 Author: menmen
+ */
+
+#ifndef SRC_TEMPLATE_CHP02_STACK_HPP_
+#define SRC_TEMPLATE_CHP02_STACK_HPP_
+
 #include <cassert>
 #include <vector>
 #include <ostream>
@@ -49,3 +58,5 @@ T const& Stack<T>::top() const {
 }
 
 }  // namespace template_2nd
+
+#endif /* SRC_TEMPLATE_CHP02_STACK_HPP_ */
