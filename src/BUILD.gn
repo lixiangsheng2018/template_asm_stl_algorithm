@@ -20,20 +20,10 @@ config("internal_config") {
   ]
 }
 
-executable("all_tests") {
+group("all_tests") {
   testonly = true
-
-  sources = [
-    "test/template/chp01/max_test.cpp",
-    "test/template/chp02/stack_test.cpp",
-    "test/template/chp03/stack_nontype_test.cpp",
-    "test/template/chp03/stack_auto_test.cpp",
-  ]
-  
-  configs += [ ":internal_config" ]
   
   deps = [
-    "//third_party/googletest:gtest",
-    "//third_party/googletest:gtest_main",
+    "//src/test/template:template_tests"
   ]
 }

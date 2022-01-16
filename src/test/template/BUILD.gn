@@ -1,0 +1,17 @@
+
+executable("template_tests") {
+  testonly = true
+  
+  sources = [
+    "chp01/max_test.cpp",
+    "chp02/stack_test.cpp",
+    "chp03/stack_nontype_test.cpp",
+    "chp03/stack_auto_test.cpp",
+  ]
+  configs += [ "//src:internal_config" ]
+  
+  deps = [
+    "//third_party/googletest:gtest",
+    "//third_party/googletest:gtest_main",
+  ]
+}
