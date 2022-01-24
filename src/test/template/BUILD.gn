@@ -9,7 +9,8 @@ config("template_config") {
     "//src/template/chp03",
     "//src/template/chp04",
     "//src/template/chp05",
-    "//src/template/chp06"
+    "//src/template/chp06",
+    "//src/template/chp11"
   ]
   
   cflags_cc =[
@@ -30,6 +31,7 @@ executable("template_tests") {
     "chp05/stack_final_test.cpp",
     "chp06/forward_test.cpp",
     "chp06/forward_person_test.cpp",
+    "chp11/foreach_test.cpp",
   ]
   
   configs += [ ":template_config" ]
