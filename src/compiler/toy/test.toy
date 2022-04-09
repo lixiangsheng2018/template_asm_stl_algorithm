@@ -1,0 +1,64 @@
+extern number sin(x);
+extern number putchard(char);
+
+number foo(x,y) {
+  x + foo(y, 4.0);
+}
+
+number baz(number x) {
+  if(x) {
+    return foo(1,2);
+  } else
+    return bar(2,3);
+}
+
+void printstar(number n) {
+  for(i = 1; i < n; i++) {
+    putchard(42);
+  }
+  putchard('\n');
+}
+
+class Animal {
+public:
+  void Eat();
+  number GetAge();
+}
+
+class Person : Animal {
+public:
+  Person() {
+    age_ = 0;
+  }
+  void Eat() {
+    putchard('E');
+    putchard('a');
+    putchard('t');
+    putchard('\n');
+  }
+  number GetAge();
+  number GetAge();
+
+private:
+  number UpgradeAge();
+  number age_;
+}
+
+number GetAge() {
+  return age_;
+}
+
+number Person::UpgradeAge() {
+  age_++;
+}
+
+// for test
+number a = 1, b = 2;
+a++;
+++b;
+a = foo(a, b);
+printstar(a);
+Animal* animal = new Person();
+animal->eat();
+animal->UpgradeAge();
+printstar(animal->GetAge());
