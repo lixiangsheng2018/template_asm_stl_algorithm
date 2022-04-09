@@ -1,6 +1,7 @@
 group("main") {
   public_deps = [
-    "asm:asm_all"
+    "asm:asm_all",
+    "compiler/toy:toy_compiler"
   ]
 }
 

@@ -1,0 +1,32 @@
+config("toy_config") {
+  # Only targets in this file and its subdirs can depend on this.
+  visibility = [ "./*" ]
+
+  include_dirs = [
+    "//src/compiler/toy/parser",
+  ]
+  
+  cflags_cc =[
+    "-Wno-sign-compare",
+    "-Wno-unused-parameter"
+  ]
+  ldflags = [
+    "-L/usr/lib/llvm-13/lib",
+    "-lLLVM-13"
+  ]
+}
+
+executable("toy_compiler") {
+  
+  sources = [
+    "toy.cpp",
+    "parser/lexer.cpp",
+    "parser/parser.cpp"
+  ]
+  
+  configs += [
+    ":toy_config"
+  ]
+  
+  
+}
